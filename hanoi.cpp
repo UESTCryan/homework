@@ -1,17 +1,19 @@
+//Lai Zhichen 2014060105007
 #include<iostream>
 #include<algorithm>
+#include<math.h>
 using namespace std;
 int k=0;
-int hnt(int n,char a,char b,char c)
+int hanoi(int n,char a,char b,char c)
 {
-    k++;
+    //k++;
     if(n==1)
         cout<<a<<" to "<<c<<endl;
     else
     {
-        hnt(n-1,a,c,b);
+        hanoi(n-1,a,c,b);
         cout<<a<<" to "<<c<<endl;
-        hnt(n-1,b,a,c);
+        hanoi(n-1,b,a,c);
 
     }
 }
@@ -19,6 +21,6 @@ int main()
 {
     int n;
     cin>>n;
-    hnt(n,'A','B','C');
-    cout<<k;
+    hanoi(n,'A','B','C');
+    cout<<pow(2,n)-1;
 }
